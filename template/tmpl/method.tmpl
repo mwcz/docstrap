@@ -3,8 +3,9 @@ var data = obj;
 var self = this;
 ?>
 <dt>
-    <h2 class="name" id="<?js= id ?>"><?js= data.attribs + (kind === 'class' ? 'new ' : '') + name + (kind !== 'event' ? data.signature : '') ?></h2>
-    
+    ##<h2 class="name" id="<?js= id ?>"><?js= data.attribs + (kind === 'class' ? 'new ' : '') + name + (kind !== 'event' ? data.signature : '') ?></h2>
+    <h2 class="name" id="<?js= id ?>"><?js= (kind === 'class' ? 'new ' : '') + name + (kind !== 'event' ? data.signature : '') ?></h2>
+
     <?js if (data.summary) { ?>
     <p class="summary"><?js= summary ?></p>
     <?js } ?>

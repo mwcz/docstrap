@@ -5,6 +5,7 @@
 	margin: 10px 0 !important;
 }
 .sunlight-code-container {
+    overflow: hidden;
 	clear: both !important;
 	position: relative !important;
 	border: none;

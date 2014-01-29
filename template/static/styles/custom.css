@@ -1,0 +1,42 @@
+/* don't display type-signature because displaying <static> a million times
+ * isn't helpful for our RequireJS module structure */
+.type-signature {
+    display: none;
+    font-size: 0.8rem;
+    color: grey;
+}
+h2, h3 {
+    font-weight: bold;
+}
+
+.navbar .dropdown-menu {
+    padding: 10px;
+}
+.navbar .dropdown-menu li a {
+    padding: 10px;
+    -webkit-transition: 0.1s background linear;
+       -moz-transition: 0.1s background linear;
+         -o-transition: 0.1s background linear;
+            transition: 0.1s background linear;
+}
+.navbar .dropdown-menu li a:hover {
+    background-color: rgba(0, 0, 0, 0.35);
+    background-image: none;
+}
+
+div.sunlight-container {
+    background-color: none !important;
+}
+.sunlight-container {
+    margin: 5px;
+    background-color: rgb(245, 245, 245);
+    border: 1px solid rgb(235, 235, 235);
+    overflow-x: auto;
+}
+
+.label {
+    max-width: 500px;
+    vertical-align: top;
+    white-space: inherit;
+    margin: 1px;
+}

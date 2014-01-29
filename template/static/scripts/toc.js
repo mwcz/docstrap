@@ -203,7 +203,16 @@ jQuery.fn.toc.defaults = {
   itemClass: function(i, heading, $heading, prefix) {
     return prefix + '-' + $heading[0].tagName.toLowerCase();
   }
-
 };
+
+// Smooth scroll between anchor links.  Just the ones written inside jsdoc
+// comments.  Anchor links inside the table of contents already have animations
+// wired up (somewhere above).
+$('#main a[href*=#]').click(function(e) {
+  e.preventDefault();
+  $('html,body').animate({scrollTop:$(this.hash).offset().top - $('.navbar').height() - 15 }, 400, 'swing', function() {
+    location.hash = $(e.target).attr('href');
+  });
+});
 
 })(jQuery);

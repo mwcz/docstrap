@@ -105,10 +105,7 @@ $.fn.toc = function(options) {
     //build TOC
     var el = $(this);
     var searchVal = '';
-    var searchForm = $("<form/>", {class: "form-search quick-search"})
-      .append($("<input/>", {type: "text", class: "input-medium search-query", placeholder: "Quick Search"}))
-      .append($("<i/>", {class: "icon icon-search search-icon"}));
-    searchForm.css({'position': 'fixed', 'top': '45px', 'padding-right': '20px'});
+    var searchForm = '';
     $(".search-icon", searchForm).css({'marginLeft': '-20px', 'marginTop': '3px'});
 
     var ul = $('<ul/>');
@@ -135,7 +132,6 @@ $.fn.toc = function(options) {
       ul.append(li);
     });
     el.html(ul);
-    el.parent().prepend(searchForm);
     el.css({'top': '80px'});
 
     //create the tree

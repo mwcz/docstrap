@@ -201,14 +201,28 @@ jQuery.fn.toc.defaults = {
   }
 };
 
+function getEventTarget(e) {
+    var trg = e.target || e.srcElement || {};
+    if (trg.nodeType == 3) { // defeat Safari bug
+        trg = trg.parentNode;
+    }
+    return trg;
+}
 // Smooth scroll between anchor links.  Just the ones written inside jsdoc
 // comments.  Anchor links inside the table of contents already have animations
 // wired up (somewhere above).
-$('#main a[href*=#toc]').click(function(e) {
-  e.preventDefault();
-  $('html,body').animate({scrollTop:$(this.hash).offset().top - $('.navbar').height() - 15 }, 400, 'swing', function() {
-    location.hash = $(e.target).attr('href');
-  });
+$('#main a[href*=#]').click(function(e) {
+  var current_file = location.pathname.slice(location.pathname.lastIndexOf('/') + 1);
+  var ev_trg = getEventTarget(e);
+  var link_file = ev_trg.href.slice(ev_trg.href.lastIndexOf('/') + 1);
+  // if this is ONLY an anchor link (ie, linking to another location within the
+  // SAME file, then sliiiiiide
+  if (link_file.indexOf(current_file) === 0) {
+    e.preventDefault();
+    $('html,body').animate({scrollTop:$(this.hash).offset().top - $('.navbar').height() - 15 }, 400, 'swing', function() {
+      location.hash = $(e.target).attr('href');
+    });
+  }
 });
 
 })(jQuery);

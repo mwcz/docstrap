@@ -37,7 +37,7 @@ var navOptions = {
 
 var navigationMaster = {
 	index     : {
-		title   : navOptions.systemName,
+		title   : htmlsafe(navOptions.systemName),
 		link    : indexUrl,
 		members : []
 	},

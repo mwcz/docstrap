@@ -2426,7 +2426,7 @@ table th[class*="span"],
 }
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: calc(100% - 2px);
   left: 0;
   z-index: 1000;
   display: none;
@@ -5796,7 +5796,7 @@ a.thumbnail:hover {
 }
 .navbar .dropdown-menu {
   padding: 20px;
-  max-height: 300px;
+  max-height: 88vh;
   overflow: auto;
   width: 300px;
   background-color: #007fff;
